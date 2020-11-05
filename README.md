@@ -3,4 +3,4 @@ LB2
 
 The seccond laboratoty work;
 Option: Administrative division and inhabitant locality;
-Did by: Klinstov Anton, Kirilushkin Alexander;
+Written by: Klinstov Anton, Kirilushkin Alexander;
