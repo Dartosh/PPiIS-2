@@ -17,10 +17,22 @@ public:
 		_square(square)
 	{}
 
-	virtual int CheckPopulation() = 0;										//Check population of the unit
-	virtual void ChangePopulation(const int& population) = 0;				//Change value of the population
-	virtual double CheckSquare() = 0;										//Check square of the unit
-	virtual string GetName() = 0;											//Get name of the unit
+	virtual int GetPopulation()												//Check population of the unit
+	{
+		return _population;
+	}
+	virtual void ChangePopulation(const int& change)						//Change value of the population
+	{
+		_population += change;
+	}
+	virtual double GetSquare()												//Check square of the unit
+	{
+		return _square;
+	}
+	virtual string GetName()											//Get name of the unit
+	{
+		return _name;
+	}
 	virtual const Unit& operator+(const Unit& value) const = 0;				//Operator overloading to union units
 
 protected:
@@ -45,26 +57,6 @@ public:
 		_crime(crime),
 		_mayor(mayor)
 	{	}
-	//Check value of square of the City
-	double CheckSquare() override
-	{
-		return _square;
-	}
-	//Check population of the City
-	int CheckPopulation() override
-	{
-		return _population;
-	};
-	//Change value of population of the City
-	void ChangePopulation(const int& change) override
-	{
-		_population += change;
-	};
-	//Check name of the City
-	string GetName() override
-	{
-		return _name;
-	}
 	//Joining the city
 	const Unit& operator+(const Unit& other) const override
 	{
@@ -75,9 +67,9 @@ public:
 		return *result;
 	}
 	//Change mayor of the City or elections
-	void Elections()
+	void Elections(const string& other)
 	{
-		cin >> _mayor;
+		_mayor = other;
 	}
 
 	//Check level of crime
@@ -107,26 +99,6 @@ public:
 		_capital(capital),
 		_regnumber(regnumber)
 	{
-	}
-	//Check value of Square
-	double CheckSquare() override
-	{
-		return _square;
-	}
-	//Check Population
-	int CheckPopulation() override
-	{
-		return _population;
-	};
-	//Change value of Population
-	void ChangePopulation(const int& change) override
-	{
-		_population += change;
-	};
-	//Check Name of Country
-	string GetName() override
-	{
-		return _name;
 	}
 	//Union of Countries
 	const Unit& operator+(const Unit& other) const override
@@ -169,26 +141,6 @@ public:
 		_center(center),
 		_citynumb(citynumb)
 	{
-	}
-	//Check value of square of the Region
-	double CheckSquare() override
-	{
-		return _square;
-	}
-	//Check population of the Region
-	int CheckPopulation() override
-	{
-		return _population;
-	};
-	//Change value of population of the Region
-	void ChangePopulation(const int& change) override
-	{
-		_population += change;
-	};
-	//Check name of the Region
-	string GetName() override
-	{
-		return _name;
 	}
 	//Union of Regions
 	const Unit& operator+(const Unit& other) const override
