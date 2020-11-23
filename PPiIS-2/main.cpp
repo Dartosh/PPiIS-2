@@ -169,6 +169,6 @@ private:
 
 int main()
 {
-	system("pouse");
+	system("pause");
 	return 0;
 }
